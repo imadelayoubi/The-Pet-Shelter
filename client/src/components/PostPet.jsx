@@ -11,6 +11,7 @@ class PostPet extends Component {
       ownerName: "",
       image: "",
       description: "",
+      pet: {},
     };
   }
 
@@ -21,19 +22,24 @@ class PostPet extends Component {
 
     this.setState({
       [nam]: val,
-      user: {
+      pet: {
         petName: this.state.petName,
         petID: this.state.petID,
         petType: this.state.petType,
         ownerName: this.state.ownerName,
-        image: this.state.image,
+        imageURL: this.state.image,
         description: this.state.description,
       },
     });
   };
 
-  postClick = () => {
+  postClick = (event) => {
+    event.preventDefault();
     console.log("clickkkk");
+
+    axios.post("/postpet", this.state.pet).then(() => {
+      console.log("data sent successfully");
+    });
   };
 
   //   postFunction = () => {
@@ -49,7 +55,7 @@ class PostPet extends Component {
         </div>
         <div>
           <label>Pet ID </label>
-          <input name="petID"></input>
+          <input name="petID" onChange={this.handleChange}></input>
         </div>
         <div>
           <label>Pet Type </label>

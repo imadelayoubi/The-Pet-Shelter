@@ -1,8 +1,5 @@
 const mongoose = require('mongoose');
 
-
-
-
 mongoose.connect('mongodb://localhost/The-pet-shelter', {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -13,23 +10,23 @@ mongoose.connect('mongodb://localhost/The-pet-shelter', {
 
 const PetSchema = new mongoose.Schema({
 
-  id: {
-    type: Number,
+  petID: {
+    type: String,
     unique: true
   },
-  type: {
+  petType: {
     type: String,
     required: true
   },
-  name: {
+  petName: {
     type: String,
     required: true,
   },
-  owner: {
+  ownerName: {
     type: String,
     required: true,
   },
-  image: {
+  imageURL: {
     type: String,
     required: true,
   },
@@ -42,4 +39,4 @@ const PetSchema = new mongoose.Schema({
 const Pet = mongoose.model("pet", PetSchema);
 
 module.exports = Pet;
-module.exports = mongoose
+// module.exports = mongoose

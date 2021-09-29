@@ -23,6 +23,22 @@ export default class App extends Component {
     });
   }
 
+  // getId = (id) => {
+  //   this.setState({});
+  // };
+
+  deletePet = (_id, e) => {
+    console.log(this.state.myPets);
+    console.log("idddddddddddddddddddd", _id);
+
+    axios.delete(`/deletePet/${_id}`).then((result) => {
+      const pets = this.state.myPets.filter((pet) => pet.petID !== id);
+      this.setState({
+        myPets: pets,
+      });
+    });
+  };
+
   render() {
     return (
       <div>
@@ -35,7 +51,7 @@ export default class App extends Component {
         <h3>
           -----------------------------------------------------------------------
         </h3>
-        <PetCard petinfo={this.state.myPets} />
+        <PetCard deletePet={this.deletePet} petinfo={this.state.myPets} />
         <h3>
           -----------------------------------------------------------------------
         </h3>

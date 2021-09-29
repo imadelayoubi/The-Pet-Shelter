@@ -7,19 +7,30 @@ class PetCard extends Component {
     this.state = {};
   }
 
+  deleteById = (e) => {
+    this.props.deletePet(e.target.value);
+  };
+
   render() {
-    console.log(this.props.petinfo);
+    console.log("infpooooo", this.props.petinfo);
     return (
       <div className="card">
-        {this.props.petinfo.map((pet) => {
+        {this.props.petinfo.map((pet, key) => {
+          console.log(this.props.petinfo);
           return (
-            <div>
-              <img src={pet.imageURL} alt="" />
-              <button>{pet.petName}</button>
-              <p> {pet.petID}</p>
-              <p className=""> {pet.petType}</p>
-              <p>{pet.petName}</p>
-              <p> {pet.description}</p>
+            <div className="card" style={{ width: 300 ,position : "relative"}} key={key}>
+              <img className="card-img-top" src={pet.imageURL} alt="" />
+              <div className="card-body">
+                <button>{pet.petName}</button>
+                <p> {pet.petID}</p>
+                <p className="card-text"> {pet.petType}</p>
+                <p className="card-text">{pet.ownerName}</p>
+                <p className="card-text"> {pet.description}</p>
+                <button>Request Adoption</button>
+                <button value={pet._id} onClick={this.deleteById}>
+                  Confirm Adoption
+                </button>
+              </div>
             </div>
           );
         })}

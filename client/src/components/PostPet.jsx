@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "../index.css";
 
 class PostPet extends Component {
   constructor(props) {
@@ -48,8 +49,8 @@ class PostPet extends Component {
 
   render() {
     return (
-      <div className="create-form">
-        <div>
+      <div className="input-group mb-3">
+        <div className="input-group-prepend">
           <label>Pet Name </label>
           <input name="petName" onChange={this.handleChange}></input>
         </div>

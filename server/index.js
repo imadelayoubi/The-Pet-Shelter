@@ -6,7 +6,7 @@ const port = 1337;
 app.use(express.static(__dirname + '/../client/build'));
 app.use(express.json())
 
-app.get('/', (req, res) => {
+app.get('/petshelter', (req, res) => {
   res.send('Hello World!');
 });
 

@@ -1,7 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import Navbar from "./NavBar.jsx";
+import Footer from "./Footer.jsx";
+import PostPet from "./PostPet.jsx";
 
 export default class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {};
+  }
   render() {
-    return <h1>React App Working</h1>;
+    return (
+      <div>
+        <Navbar />
+
+        <PostPet />
+
+        <Footer />
+      </div>
+    );
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-class ConfirmAdoption extends Component {
+class About extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -18,4 +18,4 @@ class ConfirmAdoption extends Component {
   }
 }
 
-export default ConfirmAdoption;
+export default About;

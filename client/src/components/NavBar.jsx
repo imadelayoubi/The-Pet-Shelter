@@ -7,13 +7,12 @@ class Navbar extends Component {
   render() {
     return (
       <div>
-        <div class="topnav">
-          <a class="active" href="#home">
+        <div className="topnav">
+          <a className="active" href="#home">
             Home
           </a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
-          <input type="text" placeholder="Search" />
         </div>
       </div>
     );

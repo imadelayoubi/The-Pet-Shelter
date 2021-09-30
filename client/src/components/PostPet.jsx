@@ -50,14 +50,18 @@ class PostPet extends Component {
           <label>Pet Name </label>
           <input name="petName" onChange={this.handleChange}></input>
         </div>
+        <br />
         <div>
           <label>Pet ID </label>
           <input name="petID" onChange={this.handleChange}></input>
         </div>
+        <br />
+
         <div>
           <label>Pet Type </label>
           <input name="petType" onChange={this.handleChange}></input>
         </div>
+
         <div>
           <label>Owner Name </label>
           <input name="ownerName" onChange={this.handleChange}></input>
@@ -70,7 +74,9 @@ class PostPet extends Component {
           <label>Description </label>
           <input name="description" onChange={this.handleChange}></input>
         </div>
-        <button onClick={this.postClick}>Post a Pet for adoption </button>
+        <button id="addbtn" onClick={this.postClick}>
+          Post a Pet for adoption{" "}
+        </button>
       </div>
     );
   }

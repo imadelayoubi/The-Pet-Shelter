@@ -11,6 +11,14 @@ class PetCard extends Component {
     this.props.deletePet(e.target.value);
   };
 
+  updateById = (description, e) => {
+    const describe = e.target.value;
+
+    axios.put(`/update${description}`, (req, res) => {
+      console.log(description);
+    });
+  };
+
   render() {
     console.log("infpooooo", this.props.petinfo);
     return (
@@ -35,7 +43,9 @@ class PetCard extends Component {
                 <p className="card-text"> {pet.petType}</p>
                 <p className="card-text">{pet.ownerName}</p>
                 <p className="card-text"> {pet.description}</p>
-                <button>Request Adoption</button>
+                <button value={pet.description} onClick={this.updateById}>
+                  Update
+                </button>
                 <button value={pet._id} onClick={this.deleteById}>
                   Confirm Adoption
                 </button>

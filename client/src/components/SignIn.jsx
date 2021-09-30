@@ -10,9 +10,9 @@ class SingIn extends Component {
   render() {
     return (
       <div>
-        <input type="text" placeholder="Type in your UserName" />
+        {/* <input type="text" placeholder="Type in your UserName" />
         <input type="password" placeholder="Type in your password" />
-        <button>Sign In</button>
+        <button>Sign In</button> */}
       </div>
     );
   }

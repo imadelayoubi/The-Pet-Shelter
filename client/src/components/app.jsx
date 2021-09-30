@@ -13,6 +13,7 @@ export default class App extends Component {
 
     this.state = {
       myPets: [],
+      
     };
   }
 
@@ -43,25 +44,17 @@ export default class App extends Component {
   };
 
   render() {
+    
     return (
       <div>
         <Navbar />
-        <h3>-------------------------------------------------</h3>
         <SingIn />
-        <h3>
-          -----------------------------------------------------------------------
-        </h3>
 
         <PostPet />
-        <h3>
-          -----------------------------------------------------------------------
-        </h3>
-        <PetCard deletePet={this.deletePet} petinfo={this.state.myPets} />
-        <h3>
-          -----------------------------------------------------------------------
-        </h3>
 
-        <Footer />
+        <PetCard deletePet={this.deletePet} petinfo={this.state.myPets} />
+
+        {/* <Footer /> */}
       </div>
     );
   }

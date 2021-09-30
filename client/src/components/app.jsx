@@ -13,7 +13,6 @@ export default class App extends Component {
 
     this.state = {
       myPets: [],
-      
     };
   }
 
@@ -31,6 +30,7 @@ export default class App extends Component {
   // };
 
   deletePet = (_id, e) => {
+    this.componentDidMount();
     console.log(this.state.myPets);
     console.log("idddddddddddddddddddd", _id);
 
@@ -42,9 +42,14 @@ export default class App extends Component {
     //   });
     // });
   };
+  updateById = (_id, e) => {
+    const describe = prompt("Update description");
+    console.log(_id);
+
+    axios.put(`/update/${_id}`, { description: describe });
+  };
 
   render() {
-    
     return (
       <div>
         <Navbar />
@@ -52,7 +57,11 @@ export default class App extends Component {
 
         <PostPet />
 
-        <PetCard deletePet={this.deletePet} petinfo={this.state.myPets} />
+        <PetCard
+          updateById={this.updateById}
+          deletePet={this.deletePet}
+          petinfo={this.state.myPets}
+        />
 
         {/* <Footer /> */}
       </div>

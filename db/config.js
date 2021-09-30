@@ -12,7 +12,6 @@ const PetSchema = new mongoose.Schema({
 
   petID: {
     type: String,
-    unique: true
   },
   petType: {
     type: String,

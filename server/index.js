@@ -33,9 +33,16 @@ app.delete('/deletePet/:_id', (req, res) => {
 
 })
 
-app.put('/update/:description', (req, res) => {
-  console.log(console.log(req.params.description))
-})
+app.put('/update/:_id', (req, res) => {
+  console.log(req.params)
+  console.log(req.body)
+
+  Pet.updateOne(req.params, req.body).then((updated) => {
+    console.log(updated)
+
+  })
+}
+)
 
 app.listen(port, () => {
   console.log(`The pet shelter is listening at http://localhost:${port}`);

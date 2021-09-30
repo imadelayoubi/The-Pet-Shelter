@@ -11,39 +11,31 @@ class PetCard extends Component {
     this.props.deletePet(e.target.value);
   };
 
-  updateById = (description, e) => {
-    const describe = e.target.value;
-
-    axios.put(`/update${description}`, (req, res) => {
-      console.log(description);
-    });
+  updateDescription = (e) => {
+    this.props.updateById(e.target.value);
   };
 
   render() {
     console.log("infpooooo", this.props.petinfo);
     return (
-      <div className="card">
+      <div className="row">
         {this.props.petinfo.map((pet, key) => {
           console.log(this.props.petinfo);
           return (
-            <div
-              className="card"
-              style={({ width: 100, height: 120 }, { position: "relative" })}
-              key={key}
-            >
+            <div className="col-3 myCard" key={key}>
               <img
                 className="card-img-top"
                 src={pet.imageURL}
-                style={{ width: 220, height: 220 }}
+                style={{ width: 350, height: 350 }}
                 alt=""
               />
               <div className="card-body">
-                <button>{pet.petName}</button>
+                <h3>{pet.petName}</h3>
                 <p> {pet.petID}</p>
                 <p className="card-text"> {pet.petType}</p>
                 <p className="card-text">{pet.ownerName}</p>
                 <p className="card-text"> {pet.description}</p>
-                <button value={pet.description} onClick={this.updateById}>
+                <button value={pet._id} onClick={this.updateDescription}>
                   Update
                 </button>
                 <button value={pet._id} onClick={this.deleteById}>

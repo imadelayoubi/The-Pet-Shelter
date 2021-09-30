@@ -33,8 +33,11 @@ class PostPet extends Component {
       },
     });
   };
-
+  // componentDidUpdate() {
+  //   // this.postClick();
+  // }
   postClick = (event) => {
+    location.reload;
     event.preventDefault();
     console.log("clickkkk");
 

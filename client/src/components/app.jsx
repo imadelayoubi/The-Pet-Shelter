@@ -4,6 +4,8 @@ import Footer from "./Footer.jsx";
 import PostPet from "./PostPet.jsx";
 import axios from "axios";
 import PetCard from "./PetCard.jsx";
+import css from "../index.css";
+import SingIn from "./SignIn.jsx";
 
 export default class App extends Component {
   constructor() {
@@ -31,18 +33,21 @@ export default class App extends Component {
     console.log(this.state.myPets);
     console.log("idddddddddddddddddddd", _id);
 
-    axios.delete(`/deletePet/${_id}`).then((result) => {
-      const pets = this.state.myPets.filter((pet) => pet.petID !== id);
-      this.setState({
-        myPets: pets,
-      });
-    });
+    axios.delete(`/deletePet/${_id}`);
+    // .then((result) => {
+    //   const pets = this.state.myPets.filter((pet) => pet.petID !== id);
+    //   this.setState({
+    //     myPets: pets,
+    //   });
+    // });
   };
 
   render() {
     return (
       <div>
         <Navbar />
+        <h3>-------------------------------------------------</h3>
+        <SingIn />
         <h3>
           -----------------------------------------------------------------------
         </h3>

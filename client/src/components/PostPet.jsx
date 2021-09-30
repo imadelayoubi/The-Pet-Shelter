@@ -43,10 +43,6 @@ class PostPet extends Component {
     });
   };
 
-  //   postFunction = () => {
-  //     axios.post("/postPet");
-  //   };
-
   render() {
     return (
       <div className="input-group mb-3">

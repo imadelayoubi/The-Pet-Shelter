@@ -18,8 +18,17 @@ class PetCard extends Component {
         {this.props.petinfo.map((pet, key) => {
           console.log(this.props.petinfo);
           return (
-            <div className="card" style={{ width: 300 ,position : "relative"}} key={key}>
-              <img className="card-img-top" src={pet.imageURL} alt="" />
+            <div
+              className="card"
+              style={({ width: 100, height: 120 }, { position: "relative" })}
+              key={key}
+            >
+              <img
+                className="card-img-top"
+                src={pet.imageURL}
+                style={{ width: 220, height: 220 }}
+                alt=""
+              />
               <div className="card-body">
                 <button>{pet.petName}</button>
                 <p> {pet.petID}</p>
